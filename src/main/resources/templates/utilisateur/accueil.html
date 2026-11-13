@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="fr"
+      xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{base :: layout('Accueil', ~{::main})}">
+
+<body>
+
+<main>
+
+    <!-- Section principale -->
+    <section class="hero-section">
+
+        <div class="container text-center">
+
+            <div class="hero-symbol">
+                Y
+            </div>
+
+            <p class="hero-subtitle">
+                YoRHa PERSONNEL MANAGEMENT SYSTEM
+            </p>
+
+            <h1 class="hero-title">
+                TODO SYSTEM
+            </h1>
+
+            <div class="decorative-line"></div>
+
+            <p class="hero-description">
+                Organisez vos missions.
+                Gardez le contrôle de vos objectifs.
+                Accomplissez votre devoir.
+            </p>
+
+            <div class="mt-5">
+
+                <a th:href="@{/connexion}"
+                   class="btn btn-yorha">
+
+                    ACCÉDER AU SYSTÈME
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Présentation des fonctionnalités -->
+    <section class="container features-section">
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+
+                <div class="yorha-panel">
+
+                    <span class="feature-number">01</span>
+
+                    <h2>MISSIONS</h2>
+
+                    <p>
+                        Consultez et organisez vos tâches
+                        quotidiennes.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="yorha-panel">
+
+                    <span class="feature-number">02</span>
+
+                    <h2>OBJECTIFS</h2>
+
+                    <p>
+                        Gardez une vision claire de vos
+                        objectifs.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="yorha-panel">
+
+                    <span class="feature-number">03</span>
+
+                    <h2>PROGRESSION</h2>
+
+                    <p>
+                        Suivez l'avancement de vos missions.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+</body>
+</html>

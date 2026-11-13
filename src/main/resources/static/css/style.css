@@ -1,0 +1,360 @@
+
+/* =====================================
+   1. VARIABLES ET CONFIGURATION
+===================================== */
+
+:root {
+    --yorha-bg: #e8e4d8;
+    --yorha-light: #f5f2e9;
+    --yorha-dark: #252521;
+    --yorha-black: #171715;
+    --yorha-grey: #77766e;
+    --yorha-border: #aaa79b;
+    --yorha-accent: #9b927e;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--yorha-bg);
+    color: var(--yorha-dark);
+
+    font-family: 'Inter', sans-serif;
+}
+
+main {
+    flex: 1;
+}
+
+h1, h2, .navbar-brand {
+    font-family: 'Cinzel', serif;
+}
+
+
+/* =====================================
+   2. HEADER
+===================================== */
+
+.yorha-header {
+    background-color: var(--yorha-dark);
+    border-bottom: 3px solid var(--yorha-accent);
+}
+
+.yorha-brand {
+    color: var(--yorha-light) !important;
+    font-size: 18px;
+    letter-spacing: 3px;
+}
+
+.yorha-symbol {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 35px;
+    height: 35px;
+
+    margin-right: 10px;
+
+    border: 1px solid var(--yorha-light);
+    font-family: 'Cinzel', serif;
+}
+
+.yorha-header .nav-link {
+    color: var(--yorha-light);
+
+    font-size: 12px;
+    letter-spacing: 2px;
+
+    margin-left: 20px;
+
+    transition: color .3s;
+}
+
+.yorha-header .nav-link:hover {
+    color: var(--yorha-accent);
+}
+
+/* Bouton menu mobile */
+
+.yorha-header .navbar-toggler {
+    border-color: var(--yorha-accent);
+}
+
+.yorha-header .navbar-toggler-icon {
+    filter: invert(1);
+}
+
+
+/* =====================================
+   3. PAGE D'ACCUEIL
+===================================== */
+
+.hero-section {
+    min-height: 580px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 80px 20px;
+
+    background:
+            linear-gradient(
+                    rgba(232,228,216,.88),
+                    rgba(232,228,216,.94)
+            ),
+            url('/img/nier-background.jpg') center/cover;
+}
+
+.hero-symbol {
+    font-family: 'Cinzel', serif;
+    font-size: 75px;
+
+    border: 1px solid var(--yorha-dark);
+
+    width: 110px;
+    height: 110px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 auto 30px;
+}
+
+.hero-subtitle {
+    font-size: 11px;
+    letter-spacing: 5px;
+    color: var(--yorha-grey);
+}
+
+.hero-title {
+    font-size: clamp(35px, 6vw, 65px);
+    letter-spacing: 8px;
+    margin: 20px 0;
+}
+
+.decorative-line {
+    height: 1px;
+    width: 120px;
+
+    background-color: var(--yorha-dark);
+
+    margin: 25px auto;
+}
+
+.hero-description {
+    max-width: 500px;
+
+    margin: auto;
+
+    line-height: 2;
+    color: var(--yorha-grey);
+}
+
+
+/* =====================================
+   4. BOUTONS
+===================================== */
+
+.btn-yorha {
+    display: inline-block;
+
+    padding: 15px 35px;
+
+    border: 1px solid var(--yorha-dark);
+    border-radius: 0;
+
+    background-color: var(--yorha-dark);
+    color: var(--yorha-light);
+
+    font-size: 12px;
+    letter-spacing: 3px;
+
+    transition: .3s;
+}
+
+.btn-yorha:hover {
+    background-color: transparent;
+    color: var(--yorha-dark);
+    border-color: var(--yorha-dark);
+}
+
+
+/* =====================================
+   5. CARTES DE PRÉSENTATION
+===================================== */
+
+.features-section {
+    padding-top: 50px;
+    padding-bottom: 70px;
+}
+
+.yorha-panel {
+    height: 100%;
+
+    padding: 30px;
+
+    background-color: var(--yorha-light);
+    border: 1px solid var(--yorha-border);
+
+    transition: transform .3s;
+}
+
+.yorha-panel:hover {
+    transform: translateY(-5px);
+}
+
+.yorha-panel h2 {
+    font-size: 18px;
+    letter-spacing: 3px;
+    margin: 15px 0;
+}
+
+.yorha-panel p {
+    color: var(--yorha-grey);
+    line-height: 1.8;
+}
+
+.feature-number {
+    font-family: 'Cinzel', serif;
+    font-size: 25px;
+    color: var(--yorha-accent);
+}
+
+
+/* =====================================
+   6. PAGE CONNEXION
+===================================== */
+
+.login-section {
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 60px 15px;
+}
+
+.login-card {
+    max-width: 480px;
+    width: 100%;
+
+    margin: auto;
+    padding: 45px;
+
+    background-color: var(--yorha-light);
+
+    border: 1px solid var(--yorha-border);
+
+    box-shadow: 8px 8px 0 rgba(37,37,33,.08);
+}
+
+.login-symbol {
+    font-family: 'Cinzel', serif;
+    font-size: 45px;
+}
+
+.login-title {
+    font-size: 27px;
+    letter-spacing: 4px;
+}
+
+.form-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.yorha-input {
+    padding: 13px;
+
+    border-radius: 0;
+    border: 1px solid var(--yorha-border);
+
+    background-color: transparent;
+}
+
+.yorha-input:focus {
+    border-color: var(--yorha-dark);
+
+    box-shadow: 0 0 0 2px rgba(37,37,33,.12);
+
+    background-color: white;
+}
+
+.back-link {
+    color: var(--yorha-grey);
+    text-decoration: none;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.back-link:hover {
+    color: var(--yorha-black);
+}
+
+.security-message {
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--yorha-grey);
+}
+
+
+/* =====================================
+   7. FOOTER
+===================================== */
+
+.yorha-footer {
+    padding: 25px 10px;
+
+    background-color: var(--yorha-dark);
+    color: var(--yorha-light);
+
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.yorha-footer small {
+    color: var(--yorha-accent);
+}
+
+.footer-separator {
+    margin: 0 8px;
+}
+
+
+/* =====================================
+   8. RESPONSIVE
+===================================== */
+
+@media (max-width: 576px) {
+
+    .hero-title {
+        letter-spacing: 4px;
+    }
+
+    .hero-subtitle {
+        letter-spacing: 2px;
+    }
+
+    .login-card {
+        padding: 25px;
+    }
+
+    .yorha-brand {
+        font-size: 14px;
+    }
+
+}

@@ -1,4 +1,4 @@
-package org.ldv.chat
+package org.ldv.chat.service
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

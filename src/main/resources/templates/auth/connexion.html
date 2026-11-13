@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="fr"
+      xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{base :: layout('Connexion', ~{::main})}">
+
+<body>
+
+<main class="login-section">
+
+    <div class="container">
+
+        <div class="login-card">
+
+            <!-- En-tête du formulaire -->
+            <div class="text-center mb-4">
+
+                <div class="login-symbol">
+                    Y
+                </div>
+
+                <p class="hero-subtitle">
+                    YoRHa SECURITY SYSTEM
+                </p>
+
+                <h1 class="login-title">
+                    IDENTIFICATION
+                </h1>
+
+                <div class="decorative-line"></div>
+
+            </div>
+
+            <!-- Formulaire -->
+            <form>
+
+                <div class="mb-4">
+
+                    <label for="username"
+                           class="form-label">
+
+                        IDENTIFIANT
+
+                    </label>
+
+                    <input type="text"
+                           class="form-control yorha-input"
+                           id="username"
+                           name="username"
+                           placeholder="Votre identifiant"
+                           required>
+
+                </div>
+
+                <div class="mb-4">
+
+                    <label for="password"
+                           class="form-label">
+
+                        MOT DE PASSE
+
+                    </label>
+
+                    <input type="password"
+                           class="form-control yorha-input"
+                           id="password"
+                           name="password"
+                           placeholder="Votre mot de passe"
+                           required>
+
+                </div>
+
+                <button type="button"
+                        class="btn btn-yorha w-100">
+
+                    SE CONNECTER
+
+                </button>
+
+            </form>
+
+            <!-- Retour accueil -->
+            <div class="text-center mt-4">
+
+                <a th:href="@{/}"
+                   class="back-link">
+
+                    RETOUR À L'ACCUEIL
+
+                </a>
+
+            </div>
+
+            <p class="security-message text-center mt-4">
+
+                AUTHORIZED PERSONNEL ONLY
+
+            </p>
+
+        </div>
+
+    </div>
+
+</main>
+
+</body>
+</html>
