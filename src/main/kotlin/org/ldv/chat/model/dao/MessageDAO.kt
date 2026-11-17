@@ -1,4 +1,6 @@
 package org.ldv.chat.model.dao
 
-interface MessageDAO {
+import org.springframework.data.jpa.repository.JpaRepository
+
+interface MessageDAO : JpaRepository<MessageDAO, Long> {
 }

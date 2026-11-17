@@ -1,4 +1,7 @@
-package org.ldv.chat.model.entity
+package org.ldv.chatbot.model.entity
 
-class TypeMessage {
+enum class TypeMessage {
+    SYSTEM,
+    UTILISATEUR,
+    ASSISTANT
 }
