@@ -1,4 +1,4 @@
-package org.ldv.chatbot.model.entity
+package org.ldv.chat.model.entity
 
 import jakarta.persistence.*
 
@@ -14,5 +14,8 @@ class FournisseurIA(
     var description: String,
     @Column
     var cheminLogo: String,
+    @OneToMany
+    @JoinColumn(name = "id_modele")
+    var modelesIA : MutableList<ModeleIA> = mutableListOf()
 ) {
 }

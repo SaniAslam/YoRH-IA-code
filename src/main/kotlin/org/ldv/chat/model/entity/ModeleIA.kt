@@ -1,7 +1,6 @@
-package org.ldv.chatbot.model.entity
+package org.ldv.chat.model.entity
 
 import jakarta.persistence.*
-import org.ldv.chat.model.entity.FournisseurIA
 
 @Entity
 class ModeleIA(
@@ -18,7 +17,10 @@ class ModeleIA(
     @Column
     var cheminLogo: String,
     @ManyToOne
-    @JoinColumn(name= "id_fournisseur")
-    var fournisseurIa: FournisseurIA
+    @JoinColumn(name = "id_fournisseur")
+    var fourniseurIA: FournisseurIA,
+    @OneToMany
+    @JoinColumn(name = "id_conversation")
+    var conversations: MutableList<Conversation> = mutableListOf()
 ) {
 }
