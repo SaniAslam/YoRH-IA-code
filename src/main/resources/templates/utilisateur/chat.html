@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html lang="fr"
+      xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{base :: layout('Assistant IA', ~{::main})}">
+
+<body>
+
+<main class="chat-page container-fluid py-4">
+    <aside class="conversation-sidebar">
+        <h3>HISTORIQUE</h3>
+
+        <a th:each="conv : ${conversations}"
+           th:href="@{/conversations/{id}(id=${conv.id})}"
+           class="conversation-link"
+           th:text="${conv.titre}">
+        </a>
+    </aside>
+    <div class="row">
+
+        <!-- Zone principale -->
+        <div class="col-12">
+
+            <div class="yorha-panel p-4">
+
+                <!-- Titre -->
+                <div class="text-center mb-4">
+
+                    <h1 class="hero-title">
+                        YORHA AI SYSTEM
+                    </h1>
+
+                    <p class="hero-subtitle">
+                        PERSONAL INTELLIGENCE ASSISTANT
+                    </p>
+
+                    <div class="decorative-line"></div>
+
+                </div>
+
+                <!-- Aucune conversation -->
+                <div th:if="${conversation == null}"
+                     class="text-center py-5">
+
+                    <h2>Comment puis-je vous aider ?</h2>
+
+                    <p class="text-muted">
+                        Sélectionnez un modèle IA et posez votre question.
+                    </p>
+
+                </div>
+
+
+
+                <!-- Historique des messages -->
+                <section id="chat-messages" class="chat-messages mb-4">
+
+
+
+                    <div th:each="message : ${messages}" class="mb-4">
+
+                        <hr>
+
+                    </div>
+
+                </section>
+
+                <div th:each="message : ${messages}" class="mb-4">
+
+                        <!-- Message utilisateur -->
+                        <div th:if="${message.typeMessage == T(org.ldv.chat.model.entity.TypeMessage).UTILISATEUR}">
+
+                            <div class="message-author mb-2">
+                                <strong>COMMANDANT</strong>
+                            </div>
+
+                            <div class="message-content user-message"
+                                 th:text="${message.contenu}">
+                            </div>
+
+                        </div>
+
+                        <!-- Réponse de l'assistant -->
+                        <div th:if="${message.typeMessage == T(org.ldv.chat.model.entity.TypeMessage).ASSISTANT}">
+
+                            <div class="message-author mb-2">
+                                <strong>YORHA AI</strong>
+                            </div>
+
+                            <div class="message-content bot-message"
+                                 th:text="${message.contenu}">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- Formulaire nouvelle conversation -->
+                <div th:if="${conversation == null}"
+                     class="border-top pt-4">
+
+                    <form th:action="@{/conversations}"
+                          method="post">
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                MODÈLE D'INTELLIGENCE ARTIFICIELLE
+                            </label>
+
+                            <select name="idModele"
+                                    class="form-select"
+                                    required>
+
+                                <option value=""
+                                        disabled
+                                        selected>
+                                    Choisir un modèle IA
+                                </option>
+
+                                <option th:each="modele : ${modeles}"
+                                        th:value="${modele.id}"
+                                        th:text="${modele.nom}">
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                VOTRE MESSAGE
+                            </label>
+
+                            <textarea name="prompt"
+                                      class="form-control"
+                                      rows="3"
+                                      placeholder="Écrivez votre question..."
+                                      required></textarea>
+
+                        </div>
+
+                        <button type="submit"
+                                class="btn btn-yorha w-100">
+
+                            ENVOYER LA COMMANDE
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+                <!-- Formulaire conversation existante -->
+                <div th:if="${conversation != null}"
+                     class="border-top pt-4">
+
+                    <div class="mb-3 d-flex align-items-center gap-2">
+
+                        <img th:src="@{${conversation.modeleIA.cheminLogo}}"
+                             alt="Logo du modèle"
+                             width="32"
+                             height="32">
+
+                        <strong th:text="${conversation.modeleIA.nom}">
+                            Modèle IA
+                        </strong>
+
+                    </div>
+
+                    <form th:action="@{/conversations/{id}/messages(id=${conversation.id})}"
+                          method="post">
+
+                        <div class="mb-3">
+
+                            <textarea name="prompt"
+                                      class="form-control"
+                                      rows="3"
+                                      placeholder="Écrivez votre message..."
+                                      required></textarea>
+
+                        </div>
+
+                        <button type="submit"
+                                class="btn btn-yorha w-100">
+
+                            ENVOYER LE MESSAGE
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+</body>
+</html>

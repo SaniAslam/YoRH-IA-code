@@ -21,10 +21,12 @@ repositories {
 }
 
 dependencies {
+    implementation("org.jsoup:jsoup:1.18.3")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
     implementation("org.springframework.boot:spring-boot-starter-webmvc")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
+    implementation("com.vladsch.flexmark:flexmark-all:0.64.8")
     implementation("tools.jackson.module:jackson-module-kotlin")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     runtimeOnly("org.mariadb.jdbc:mariadb-java-client")
@@ -50,3 +52,4 @@ allOpen {
 tasks.withType<Test> {
     useJUnitPlatform()
 }
+

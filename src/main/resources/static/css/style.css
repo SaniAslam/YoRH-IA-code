@@ -112,7 +112,7 @@ h1, h2, .navbar-brand {
                     rgba(232,228,216,.88),
                     rgba(232,228,216,.94)
             ),
-            url('/img/nier-background.jpg') center/cover;
+            url('../img/nier-background.jpeg') center/cover;
 }
 
 .hero-symbol {
@@ -357,4 +357,95 @@ h1, h2, .navbar-brand {
         font-size: 14px;
     }
 
+    /* ==============================
+       YORHA CHAT SYSTEM
+    ============================== */
+
+    .chat-page {
+        min-height: 75vh;
+    }
+
+    .chat-page .yorha-panel {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    .chat-messages {
+        min-height: 250px;
+        max-height: 550px;
+        overflow-y: auto;
+        padding: 20px;
+    }
+
+    .message-author {
+        font-family: 'Cinzel', serif;
+        font-size: 12px;
+        letter-spacing: 2px;
+        color: #b69b55;
+    }
+
+    .message-content {
+        padding: 15px 18px;
+        border-radius: 4px;
+        line-height: 1.7;
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+    }
+
+    .user-message {
+        background: rgba(182, 155, 85, 0.12);
+        border-left: 3px solid #b69b55;
+        color: inherit;
+    }
+
+    .bot-message {
+        background: rgba(100, 110, 120, 0.12);
+        border-left: 3px solid #7b8794;
+        color: inherit;
+    }
+
+    .chat-page textarea,
+    .chat-page select {
+        background-color: transparent;
+        border: 1px solid #b69b55;
+        border-radius: 3px;
+    }
+
+    .chat-page textarea:focus,
+    .chat-page select:focus {
+        border-color: #d4b66c;
+        box-shadow: 0 0 8px rgba(182, 155, 85, 0.25);
+    }
+
+    .chat-page .form-label {
+        font-family: 'Cinzel', serif;
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+
+    .conversation-sidebar {
+        background: #111820;
+        border: 1px solid #526477;
+        padding: 20px;
+        min-height: 300px;
+    }
+
+    .conversation-sidebar h3 {
+        color: #d6bd72;
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .conversation-link {
+        display: block;
+        color: #c5d0dc;
+        text-decoration: none;
+        padding: 10px;
+        border-bottom: 1px solid #303d4b;
+    }
+
+    .conversation-link:hover {
+        background: #263442;
+        color: #fff;
+    }
 }

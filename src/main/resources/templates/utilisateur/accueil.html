@@ -1,113 +1,45 @@
 
 <!DOCTYPE html>
 <html lang="fr"
-      xmlns:th="http://www.thymeleaf.org"
-      th:replace="~{base :: layout('Accueil', ~{::main})}">
+      xmlns:th="http://www.thymeleaf.org">
 
-<body>
+<div th:fragment="chat">
 
-<main>
+    <div id="chatbot-container">
 
-    <!-- Section principale -->
-    <section class="hero-section">
+        <!-- En-tête -->
+        <div id="chatbot-header">
+            <span>YORHA ASSISTANT</span>
+            <span class="chatbot-status">● ONLINE</span>
+        </div>
 
-        <div class="container text-center">
+        <!-- Messages -->
+        <div id="chatbot-messages">
 
-            <div class="hero-symbol">
-                Y
-            </div>
-
-            <p class="hero-subtitle">
-                YoRHa PERSONNEL MANAGEMENT SYSTEM
-            </p>
-
-            <h1 class="hero-title">
-                TODO SYSTEM
-            </h1>
-
-            <div class="decorative-line"></div>
-
-            <p class="hero-description">
-                Organisez vos missions.
-                Gardez le contrôle de vos objectifs.
-                Accomplissez votre devoir.
-            </p>
-
-            <div class="mt-5">
-
-                <a th:href="@{/connexion}"
-                   class="btn btn-yorha">
-
-                    ACCÉDER AU SYSTÈME
-
-                </a>
-
+            <div class="bot-message">
+                YoRHa System initialisé.
+                Comment puis-je vous aider ?
             </div>
 
         </div>
 
-    </section>
+        <!-- Zone de saisie -->
+        <div id="chatbot-input-area">
 
-    <!-- Présentation des fonctionnalités -->
-    <section class="container features-section">
+            <input type="text"
+                   id="user-message"
+                   placeholder="Écrivez votre message..."
+                   autocomplete="off">
 
-        <div class="row g-4">
-
-            <div class="col-md-4">
-
-                <div class="yorha-panel">
-
-                    <span class="feature-number">01</span>
-
-                    <h2>MISSIONS</h2>
-
-                    <p>
-                        Consultez et organisez vos tâches
-                        quotidiennes.
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="col-md-4">
-
-                <div class="yorha-panel">
-
-                    <span class="feature-number">02</span>
-
-                    <h2>OBJECTIFS</h2>
-
-                    <p>
-                        Gardez une vision claire de vos
-                        objectifs.
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="col-md-4">
-
-                <div class="yorha-panel">
-
-                    <span class="feature-number">03</span>
-
-                    <h2>PROGRESSION</h2>
-
-                    <p>
-                        Suivez l'avancement de vos missions.
-                    </p>
-
-                </div>
-
-            </div>
+            <button type="button"
+                    id="send-message">
+                ENVOYER
+            </button>
 
         </div>
 
-    </section>
+    </div>
 
-</main>
+</div>
 
-</body>
 </html>
