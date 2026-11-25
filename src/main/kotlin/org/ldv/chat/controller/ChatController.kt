@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.server.ResponseStatusException
 import java.time.LocalDateTime
-
+import org.springframework.transaction.annotation.Transactional
 @Controller
 class ChatController(
     private val iaServiceFactory: IAServiceFactory,
@@ -175,5 +175,20 @@ fun creerConversation(
         conversationDAO.save(conversation)
 
         return "redirect:/conversations/$id"
+    }
+    @PostMapping("/conversations/{id}/supprimer")
+    @Transactional
+    fun supprimerConversation(@PathVariable id: Long): String {
+
+        val conversation = conversationDAO.findById(id)
+            .orElseThrow {
+                ResponseStatusException(HttpStatus.NOT_FOUND)
+            }
+
+        messageDAO.deleteAllByConversation_Id(id)
+
+        conversationDAO.delete(conversation)
+
+        return "redirect:/chat"
     }
 }
